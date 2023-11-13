@@ -1,0 +1,343 @@
+/*==================== VARIABLES CSS ====================*/
+
+:root {
+    --header-height: 3rem;
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 250;
+    /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  
+    /*========== Font and typography ==========*/
+    --body-font: "Poppins", sans-serif;
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Margines ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 100;
+  }
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+/* Light theme styles */
+.light-theme {
+    --primary-text-color: #000;
+    --primary-bg-color: #fff;
+    --secondary-bg-color: #eee;
+    --primary-fn-bg-color: #ecf0f1;
+    /* Other light theme colors */
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    --primary-header-bg-color: #ECF2FB;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    --primary-text-color: #fff;
+    --primary-bg-color: #333;
+    --secondary-bg-color: #222;
+    --primary-fn-bg-color: #03AC47;
+    /* Other dark theme colors */
+    --primary-header-bg-color: rgba(255, 255, 255, 0.21);;
+}
+
+/*========== SCROLL BAR ==========*/
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: var(--scroll-thumb-color);
+    border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+      background-color: var(--primary-fn-bg-color);
+    border-radius: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+  }
+  
+/* ::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+  }
+   */
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    /* Apply other variables as needed */
+    padding: 0;
+    margin: 0;
+}
+
+/* //// */
+.page-actions-cont {
+    height: 3rem;
+    background-color: #218c74;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 1rem;
+    display: none;
+}
+.page-action {
+    width: 3.5rem;
+    height: 2rem;
+    text-align: center;
+    color: #f1f2f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selected-page-action {
+    background-color: #f1f2f6;
+    color: #218c74;
+}
+.cellprop-actions-cont {
+    height: 3rem;
+    /* background-color: #ecf0f1; */
+    background-color: var(--primary-bg-color);
+
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    position: relative;
+
+    /*  */
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: 20px auto;
+    backdrop-filter: blur(4px);
+    /* background: rgba(255, 255, 255, 0.21); */
+    background: var(--primary-header-bg-color);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 0.75rem;
+    padding: 0px 20px;
+
+}
+.cellprop-actions-cont > * {
+    display: inline-block;
+    margin-right: 1rem;
+}
+.cellprop-actions-cont > *:hover {
+    cursor: pointer;
+}
+.cellprop-actions-cont > select {
+    border: none;
+    border-radius: 2px;
+    outline: none;
+}
+.font-family-prop {
+    padding: 0.2rem;
+}
+.font-size-prop {
+    padding: 0.2rem;
+}
+.formula-actions-cont {
+    height: 2rem;
+    /* background-color: #ecf0f1; */
+    /* background-color: var(--primary-fn-bg-color); */
+    background-color: var(--primary-bg-color);
+    /* padding-left: 1rem; */
+    display: flex;
+    align-items: center;
+}
+.formula-actions-cont > * {
+    display: inline-block;
+    margin-right: 0.7rem;
+}
+.formula-icon {
+    width: 1.2rem; 
+}
+.address-bar {
+    width: 5rem;
+    /* text-align: center; */
+    padding-left: 10px;
+}
+.formula-bar {
+    width: calc( 100vw - 5rem - 0.7rem - 0.7rem - 0.7rem );
+}
+.formula-actions-cont > input {
+    border: none;
+    outline: none;
+    height: 70%;
+}
+.sheet-actions-cont {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    gap: 1rem;
+    /* background-color: #ecf0f1; */
+    background-color: var(--primary-bg-color);
+}
+.sheet-actions-cont > * {
+    display: inline-block;
+}
+.sheet-add-icon {
+    width: 2vw;
+}
+.sheet-add-icon:hover {
+    cursor: default;
+}
+
+.sheets-folder-cont {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 5rem;
+    width: calc( 100vw - 2vw );
+    overflow: auto;
+}
+.sheet-folder {
+    height: 80%;
+    text-decoration: underline;
+    font-weight: bold;
+    text-decoration-thickness: 3px;
+    font-size: 0.9rem;
+    /* background-color: lightblue; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet-content {
+    width: 5rem;
+    /* background-color: lightgreen; */
+}
+
+.grid-cont {
+    height: calc( 100vh - 3rem - 3rem - 2rem - 3rem );
+    position: relative;
+    overflow: scroll;
+    background-color: #ecf0f1;
+}
+
+.top-left-dummy-box {
+    height: 2rem;
+    width: 2rem;
+    /* background-color: #747d8c; */
+    background-color: var(--primary-bg-color);
+    position: fixed;
+    z-index: 4;
+}
+.address-col-cont {
+    position: sticky;
+    top: 2rem;
+    left: 0;
+}
+.address-row-cont {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 2rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: hsla(0,0%,100%,.212);
+}
+.cells-cont {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    background-color: var(--primary-bg-color);
+}
+
+.address-col {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dfe4ea;
+    background-color: var(--primary-bg-color);
+}
+.address-row {
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #dfe4ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row-cont {
+    display: flex;
+}
+.cell {
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #dfe4ea;
+    outline: none;
+}
+
+.color-prop {
+    position: relative;
+}
+.color-prop > input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.theme_btn {
+    position: absolute;
+    right: 0;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.dark-theme-icon {
+    color: white;
+}
