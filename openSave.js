@@ -6,15 +6,10 @@ downloadBtn.addEventListener("click", (e) => {
   let jsonData = JSON.stringify([sheetDB, graphComponentMatrix]);
   let file = new Blob([jsonData], { type: "application/json" });
 
-  console.log({
-    jsonData,
-    file,
-  });
-
-  // let a = document.createElement("a");
-  // a.href = URL.createObjectURL(file);
-  // a.download = "SheetData.json";
-  // a.click();
+  let a = document.createElement("a");
+  a.href = URL.createObjectURL(file);
+  a.download = "SheetData.json";
+  a.click();
 });
 
 // Open task (upload)
